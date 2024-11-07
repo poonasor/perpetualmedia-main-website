@@ -19,20 +19,11 @@ export function AppCompanyPortfolio_2024() {
     }
   }, [darkMode])
 
-  const portfolioItems = [
+  const portfolioItems: any[] = [
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
     { name: 'Private Hangout', image: '/assets/images/iphone-private-hangout.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: 'https://privatehangout.com/', web: 'https://app.privatehangout.com/', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
     { name: 'Symbolique', image: '/assets/images/iphone-symbolique.png', description: 'Boost your productivity and organize your life with our powerful task management app. Stay on top of your goals and never miss a deadline again.', features: ['Art-Based Therapy: Uses digital art and storytelling for emotional growth.', 'Focus on Resilience: Aims to boost adaptability and reduce resistance to change.', 'Emphasis on Well-Being: Designed for both personal and professional development.'], url: 'https://www.symbolique.ca/', web: 'https://app.symbolique.ca/', appstore: '', playstore: '' },
   ]
-
-  const features = ['Innovative Design', 'Seamless Integration', 'Exceptional Support']
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % features.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -42,24 +33,6 @@ export function AppCompanyPortfolio_2024() {
 
   return (
     <>
-      <NextSeo
-        title="perpetualmedia ltd. | app/web development and blockchain"
-        description="perpetual media ltd. is a canadian company specializing in next generation app/web development and blockchain web3 development."
-        openGraph={{
-          url: 'https://perpetualmedia.ca',
-          title: 'perpetual media ltd. | app/web development and blockchain',
-          description: 'perpetual media ltd. is a canadian company specializing in next generation app/web development and blockchain web3 development.',
-          images: [
-            {
-              url: 'https://perpetualmedia.ca/assets/images/og_image.jpg',
-              width: 800,
-              height: 600,
-              alt: 'perpetualmedia ltd. | app/web development and blockchain',
-            },
-          ],
-          site_name: 'perpetualmedia ltd.',
-        }}
-      />
       <div className={`min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
         <motion.header 
           className="sticky top-0 z-30 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-sm"
@@ -165,7 +138,7 @@ export function AppCompanyPortfolio_2024() {
                       {item.description}
                     </motion.p>
                     <ul className="mb-6">
-                      {item.features.map((feature, featureIndex) => (
+                      {item.features.map((feature: string, featureIndex: number) => (
                         <motion.li 
                           key={featureIndex} 
                           className="flex items-center mb-2"
@@ -180,7 +153,7 @@ export function AppCompanyPortfolio_2024() {
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-4">
-                      {item.url != "" && (
+                    {item.url && typeof item.url === 'string' && (
                         <motion.div
                   whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -197,13 +170,13 @@ export function AppCompanyPortfolio_2024() {
                       </a>
                         </motion.div>
                       )}
-                      {item.web != "" && (
+                      {item.web && typeof item.web === 'string' && (
                         <motion.div
                   whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="relative inline-block"
                     >
-                      <a href={item.url} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                      <a href={item.web} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
                       <span className="relative z-10 flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 fill-current">
   <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
@@ -214,7 +187,7 @@ export function AppCompanyPortfolio_2024() {
                       </a>
                         </motion.div>
                       )}
-                      {item.appstore != "" && (
+                      {item.appstore && typeof item.appstore === 'string' && (
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -230,7 +203,7 @@ export function AppCompanyPortfolio_2024() {
                         </a>
                       </motion.div>
                       )}
-                      {item.playstore != "" && (
+                      {item.playstore && typeof item.playstore === 'string' && (
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
