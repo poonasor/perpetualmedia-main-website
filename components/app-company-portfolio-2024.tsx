@@ -21,9 +21,9 @@ export function AppCompanyPortfolio_2024() {
   }, [darkMode])
 
   const portfolioItems = [
-    { name: 'Dividables', image: '/assets/images/iphone-mockup.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: 'https://www.dividables.com/', appstore: '', playstore: '' },
-    { name: 'Private Hangout', image: '/assets/images/iphone-mockup-2.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: 'https://privatehangout.com/', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
-    { name: 'Symbolique', image: '/assets/images/iphone-mockup.png', description: 'Boost your productivity and organize your life with our powerful task management app. Stay on top of your goals and never miss a deadline again.', features: ['Art-Based Therapy: Uses digital art and storytelling for emotional growth.', 'Focus on Resilience: Aims to boost adaptability and reduce resistance to change.', 'Emphasis on Well-Being: Designed for both personal and professional development.'], url: 'https://app.symbolique.ca/', appstore: '', playstore: '' },
+    { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
+    { name: 'Private Hangout', image: '/assets/images/iphone-private-hangout.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: 'https://privatehangout.com/', web: 'https://app.privatehangout.com/', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
+    { name: 'Symbolique', image: '/assets/images/iphone-symbolique.png', description: 'Boost your productivity and organize your life with our powerful task management app. Stay on top of your goals and never miss a deadline again.', features: ['Art-Based Therapy: Uses digital art and storytelling for emotional growth.', 'Focus on Resilience: Aims to boost adaptability and reduce resistance to change.', 'Emphasis on Well-Being: Designed for both personal and professional development.'], url: 'https://www.symbolique.ca/', web: 'https://app.symbolique.ca/', appstore: '', playstore: '' },
   ]
 
   const features = ['Innovative Design', 'Seamless Integration', 'Exceptional Support']
@@ -174,10 +174,27 @@ export function AppCompanyPortfolio_2024() {
                     <a href={item.url} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
                     <span className="relative z-10 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 fill-current">
-  <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clip-rule="evenodd" />
-                          <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clip-rule="evenodd" />
+  <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
+                          <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
                         </svg>
-                          Web
+                          Website
+                        </span>
+                    </a>
+                      </motion.div>
+                    )}
+                    {item.web != "" && (
+                      <motion.div
+                whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative inline-block"
+                  >
+                    <a href={item.url} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                    <span className="relative z-10 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 fill-current">
+  <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
+                          <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
+                        </svg>
+                          Web App
                         </span>
                     </a>
                       </motion.div>
