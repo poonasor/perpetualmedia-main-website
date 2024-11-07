@@ -5,11 +5,9 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Moon, Sun, ArrowRight, Mail, MapPin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { NextSeo } from 'next-seo'
 
 export function AppCompanyPortfolio_2024() {
   const [darkMode, setDarkMode] = useState(false)
-  const [activeFeature, setActiveFeature] = useState(0)
 
   useEffect(() => {
     if (darkMode) {
@@ -18,6 +16,37 @@ export function AppCompanyPortfolio_2024() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbols: [
+        { description: "", proName: "FX_IDC:CADUSD" },
+        { description: "", proName: "KRAKEN:BTCCAD" },
+        { description: "", proName: "KRAKEN:ETHCAD" },
+        { description: "", proName: "KRAKEN:USDCCAD" },
+        { description: "", proName: "KRAKEN:USDTCAD" }
+      ],
+      showSymbolLogo: true,
+      colorTheme: "dark",
+      isTransparent: true,
+      displayMode: "adaptive",
+      locale: "en"
+    });
+
+    const container = document.querySelector('.tradingview-widget-container__widget');
+    if (container) {
+      container.appendChild(script);
+    }
+
+    return () => {
+      if (container) {
+        container.removeChild(script);
+      }
+    };
+  }, []);
 
   const portfolioItems: any[] = [
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
@@ -64,23 +93,21 @@ export function AppCompanyPortfolio_2024() {
           </div>
         </motion.header>
 
-        <main>
+        <main>          
           {/* Hero Section */}
-          <section className="py-20 text-center relative overflow-hidden">
-            <div className="container mx-auto py-10 px-4 relative z-10">
+          <section className="pb-20 text-center relative overflow-hidden">
+            <div className="w-full relative z-50">
+              <div className="tradingview-widget-container">
+                  <div className="tradingview-widget-container__widget"></div>
+                </div>
+            </div>
+            <div className="container mx-auto pt-20 pb-8 px-4 relative z-10">
               <motion.h2
                 {...fadeInUp}
                 className="py-5 text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#ffffff] dark:from-purple-600 dark:to-pink-600"
               >
-                Crafting Digital Experiences
-              </motion.h2>
-              <motion.p
-                {...fadeInUp}
-                transition={{ delay: 0.2, ...fadeInUp.transition }}
-                className="text-xl mb-8 max-w-2xl mx-auto text-white dark:text-gray-300"
-              >
                 We build innovative apps that transform ideas into reality
-              </motion.p>
+              </motion.h2>
             </div>
             <div className="absolute inset-0 opacity-70"
                     style={{ 
