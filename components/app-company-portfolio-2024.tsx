@@ -120,6 +120,12 @@ export function AppCompanyPortfolio_2024() {
           {/* Portfolio Section */}
           <section className="py-20">
             <div className="container mx-auto px-4">
+            <motion.h2 
+                {...fadeInUp}
+                className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+              >
+                Our Products
+              </motion.h2>
               <motion.h2 
                 {...fadeInUp}
                 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
