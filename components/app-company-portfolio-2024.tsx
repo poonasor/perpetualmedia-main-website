@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Moon, Sun, ArrowRight, Mail, MapPin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { PortfolioItem } from './portfolio-item'
 
 export function AppCompanyPortfolio_2024() {
   const [darkMode, setDarkMode] = useState(false)
@@ -48,9 +49,26 @@ export function AppCompanyPortfolio_2024() {
     };
   }, []);
 
-  const portfolioItems: any[] = [
+  const appItems: any[] = [
+    {
+      name: 'WayPoint X',
+      image: '/assets/images/iphone-waypoint-x.png',
+      description: 'From planning the perfect sightseeing itinerary to optimizing your daily service calls, Waypoint X is the essential tool for anyone who needs to visit multiple destinations in a single trip. Delivery and rideshare drivers can minimize their time on the road, while traveling sales reps can maximize their face time with clients and prospects.',
+      features: [
+        'Waypoint X intelligently plans the most efficient route between all your stops',
+        'Minimize driving time and fuel costs with optimized routing',
+        'The essential trip planning and optimization tool for driving professionals'
+      ],
+      url: 'https://waypoint-x.com/',
+      web: '',
+      appstore: '',
+      playstore: ''
+    },
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
-    { name: 'Private Hangout', image: '/assets/images/iphone-private-hangout.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: 'https://privatehangout.com/', web: 'https://app.privatehangout.com/', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
+  ]
+
+  const portfolioItems: any[] = [
+    { name: 'Private Hangout', image: '/assets/images/iphone-private-hangout.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: '', web: '', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
     { name: 'Symbolique', image: '/assets/images/iphone-symbolique.png', description: 'Boost your productivity and organize your life with our powerful task management app. Stay on top of your goals and never miss a deadline again.', features: ['Art-Based Therapy: Uses digital art and storytelling for emotional growth.', 'Focus on Resilience: Aims to boost adaptability and reduce resistance to change.', 'Emphasis on Well-Being: Designed for both personal and professional development.'], url: 'https://www.symbolique.ca/', web: 'https://app.symbolique.ca/', appstore: '', playstore: '' },
   ]
 
@@ -63,14 +81,14 @@ export function AppCompanyPortfolio_2024() {
   return (
     <>
       <div className={`min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
-        <motion.header 
-          className="sticky top-0 z-30 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-sm"
+        <motion.header
+          className="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-sm"
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ type: 'spring', stiffness: 100, damping: 15 }}
         >
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <motion.h1 
+            <motion.h1
               className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -93,13 +111,13 @@ export function AppCompanyPortfolio_2024() {
           </div>
         </motion.header>
 
-        <main>          
+        <main>
           {/* Hero Section */}
           <section className="pb-20 text-center relative overflow-hidden">
-            <div className="w-full relative z-50">
+            <div className="w-full relative z-40">
               <div className="tradingview-widget-container">
-                  <div className="tradingview-widget-container__widget"></div>
-                </div>
+                <div className="tradingview-widget-container__widget"></div>
+              </div>
             </div>
             <div className="container mx-auto pt-20 pb-8 px-4 relative z-10">
               <motion.h2
@@ -110,157 +128,39 @@ export function AppCompanyPortfolio_2024() {
               </motion.h2>
             </div>
             <div className="absolute inset-0 opacity-70"
-                    style={{ 
-                      backgroundImage: "url('/assets/images/pattern-tesseract.png')", 
-                      backgroundSize: "50px",
-                    }}></div>
+              style={{
+                backgroundImage: "url('/assets/images/pattern-tesseract.png')",
+                backgroundSize: "50px",
+              }}></div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#7209B7] to-[#4361EE] dark:from-purple-900 dark:to-pink-900 opacity-90"></div>
           </section>
 
           {/* Portfolio Section */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-            <motion.h2 
+              <motion.h2
                 {...fadeInUp}
                 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
               >
-                Our Products
+                Our Apps
               </motion.h2>
-              <motion.h2 
+              {appItems.map((item, index) => (
+                <PortfolioItem key={index} item={item} index={index} />
+              ))}
+              <motion.h2
                 {...fadeInUp}
                 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
               >
-                Our Portfolio
+                Client Portfolio
               </motion.h2>
               {portfolioItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  className={`mb-20 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}
-                >
-                  <div className="w-full md:w-1/2">
-                    <motion.div 
-                      className="relative rounded-lg overflow-hidden"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                    >
-                      <img src={item.image} alt={item.name} className="w-full h-auto" />
-
-                    </motion.div>
-                  </div>
-                  <div className="w-full md:w-1/2">
-                    <motion.h3 
-                      className="text-4xl tracking-tight font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
-                      initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5 }}
-                      viewport={{ once: true }}
-                    >
-                      {item.name}
-                    </motion.h3>
-                    <motion.p 
-                      className="text-gray-600 dark:text-gray-300 mb-6"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      {item.description}
-                    </motion.p>
-                    <ul className="mb-6">
-                      {item.features.map((feature: string, featureIndex: number) => (
-                        <motion.li 
-                          key={featureIndex} 
-                          className="flex items-center mb-2"
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <ArrowRight className="h-4 w-4 mr-2 text-purple-600" />
-                          <span>{feature}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-4">
-                    {item.url && typeof item.url === 'string' && (
-                        <motion.div
-                  whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="relative inline-block"
-                    >
-                      <a href={item.url} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                      <span className="relative z-10 flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 fill-current">
-  <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
-                            <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
-                          </svg>
-                            Website
-                          </span>
-                      </a>
-                        </motion.div>
-                      )}
-                      {item.web && typeof item.web === 'string' && (
-                        <motion.div
-                  whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="relative inline-block"
-                    >
-                      <a href={item.web} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                      <span className="relative z-10 flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 fill-current">
-  <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
-                            <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
-                          </svg>
-                            Web App
-                          </span>
-                      </a>
-                        </motion.div>
-                      )}
-                      {item.appstore && typeof item.appstore === 'string' && (
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative inline-block"
-                      >
-                          <a href={item.appstore} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                          <span className="relative z-10 flex items-center">
-                            <svg viewBox="0 0 384 512" className="w-5 h-5 mr-2 fill-current">
-                              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-                            </svg>
-                            App Store
-                          </span>
-                        </a>
-                      </motion.div>
-                      )}
-                      {item.playstore && typeof item.playstore === 'string' && (
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative inline-block"
-                      >
-                      <a href={item.playstore} target="_blank" className="py-2 px-4 text-sm font-medium leading-4 inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                          <span className="relative z-10 flex items-center">
-                            <svg viewBox="0 0 512 512" className="w-5 h-5 mr-2 fill-current">
-                              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
-                            </svg>
-                            Play Store
-                          </span>
-                        </a>
-                      </motion.div>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
+                <PortfolioItem key={index} item={item} index={index} />
               ))}
             </div>
           </section>
         </main>
 
-        <motion.footer 
+        <motion.footer
           className="bg-gradient-to-br from-[#7209B7] to-[#4361EE] dark:from-purple-900 dark:to-pink-900 text-white pt-16 pb-4 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -285,7 +185,7 @@ export function AppCompanyPortfolio_2024() {
                 </ul>
               </div>
               <div className='z-10'>
-              <h3 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#ffffff] dark:from-purple-600 dark:to-pink-600">Contact Us</h3>
+                <h3 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#ffffff] dark:from-purple-600 dark:to-pink-600">Contact Us</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Mail className="h-5 w-5 mr-2 text-pink-400" />
@@ -303,10 +203,10 @@ export function AppCompanyPortfolio_2024() {
             </div>
           </div>
           <div className="absolute inset-0 opacity-10 z-0"
-                    style={{ 
-                      backgroundImage: "url('/assets/images/pattern-tesseract.png')", 
-                      backgroundSize: "50px",
-                    }}></div>
+            style={{
+              backgroundImage: "url('/assets/images/pattern-tesseract.png')",
+              backgroundSize: "50px",
+            }}></div>
         </motion.footer>
       </div>
     </>
