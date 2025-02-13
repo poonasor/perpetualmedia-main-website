@@ -61,7 +61,7 @@ export function AppCompanyPortfolio_2024() {
       ],
       url: 'https://waypoint-x.com/',
       web: '',
-      appstore: '',
+      appstore: 'https://apps.apple.com/us/app/waypoint-x/id6741455428',
       playstore: ''
     },
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
