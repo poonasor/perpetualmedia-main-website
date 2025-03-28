@@ -68,6 +68,34 @@ export function AppCompanyPortfolio_2024() {
   ]
 
   const portfolioItems: any[] = [
+    {
+      name: 'PrintBuy',
+      image: '/assets/images/macbook-picnstic.png',
+      description: 'PicnStic combines 25+ years of print industry experience with a fun, creative approach to deliver premium custom stickers that help individuals and businesses express their unique identity.',
+      features: [
+        'Premium - quality custom stickers with vibrant colors and sharp printing',
+        'Simple, user - friendly design tools for unleashing creativity',
+        'Trusted expertise from 25 + years in the print industry',
+      ],
+      url: 'https://www.picnstic.com/',
+      web: '',
+      appstore: '',
+      playstore: ''
+    },
+    {
+      name: 'PrintBuy',
+      image: '/assets/images/macbook-printbuy.png',
+      description: 'Printbuy combines expert print production and graphic design services to deliver outstanding marketing materials for businesses of all sizes.',
+      features: [
+        'Custom corporate identity and branding design',
+        'Print solutions from on-demand to large-format production',
+        'Client-focused project management ensuring on-time, high-quality deliverables'
+      ],
+      url: 'https://www.printbuy.ca/',
+      web: '',
+      appstore: '',
+      playstore: ''
+    },
     { name: 'Private Hangout', image: '/assets/images/iphone-private-hangout.png', description: 'Connect one-on-one with influencers and creators you admire through private, paid video calls. Enjoy personalized interactions, get advice, or simply chat.', features: ['Direct Access: Connect one-on-one with influencers and creators.', 'Flexible Pricing: Pay only for the time you use.', 'Privacy-Focused: Strong emphasis on secure, confidential interactions.'], url: '', web: '', appstore: 'https://apps.apple.com/ca/app/private-hangout/id6572324418', playstore: 'https://play.google.com/store/apps/details?id=com.privatehangout.app' },
     { name: 'Symbolique', image: '/assets/images/iphone-symbolique.png', description: 'Boost your productivity and organize your life with our powerful task management app. Stay on top of your goals and never miss a deadline again.', features: ['Art-Based Therapy: Uses digital art and storytelling for emotional growth.', 'Focus on Resilience: Aims to boost adaptability and reduce resistance to change.', 'Emphasis on Well-Being: Designed for both personal and professional development.'], url: 'https://www.symbolique.ca/', web: 'https://app.symbolique.ca/', appstore: '', playstore: '' },
   ]
