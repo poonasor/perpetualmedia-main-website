@@ -61,7 +61,7 @@ export function AppCompanyPortfolio_2024() {
       ],
       url: 'https://waypoint-x.com/',
       web: '',
-      appstore: 'https://apps.apple.com/us/app/waypoint-x/id6741455428',
+      appstore: 'https://apps.apple.com/app/apple-store/id6741455428?pt=127609708&ct=perpetualmedia&mt=8',
       playstore: ''
     },
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
@@ -69,7 +69,7 @@ export function AppCompanyPortfolio_2024() {
 
   const portfolioItems: any[] = [
     {
-      name: 'PrintBuy',
+      name: 'PicnStic',
       image: '/assets/images/macbook-picnstic.png',
       description: 'PicnStic combines 25+ years of print industry experience with a fun, creative approach to deliver premium custom stickers that help individuals and businesses express their unique identity.',
       features: [
