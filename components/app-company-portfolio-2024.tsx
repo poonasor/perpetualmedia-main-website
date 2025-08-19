@@ -51,6 +51,21 @@ export function AppCompanyPortfolio_2024() {
 
   const appItems: any[] = [
     {
+      name: 'SEO Tracer',
+      image: '/assets/images/macbook-seotracer.png',
+      description: 'Professional SEO Spider Crawler for macOS. Extract page titles, meta descriptions, find broken links, and analyze HTTP response codes. The powerful alternative to Screaming Frog, built specifically for Mac users.',
+      features: [
+        'Crawl entire websites and extract all page titles, meta descriptions, and heading structures with lightning speed',
+        'Identify and fix broken internal and external links that hurt your SEO performance and user experience.',
+        'All data processing happens locally on your Mac. No data is sent to external servers, ensuring complete privacy',
+        'Export your findings to CSV, HTML, or PDF formats. Generate comprehensive SEO audit reports for clients.'
+      ],
+      url: 'https://www.seotracer.app/',
+      web: '',
+      appstore: 'https://apps.apple.com/ca/app/seo-tracer-seo-spider-crawler/id6749603602&ct=perpetualmedia',
+      playstore: ''
+    },
+    {
       name: 'WayPoint X',
       image: '/assets/images/iphone-waypoint-x.png',
       description: 'From planning the perfect sightseeing itinerary to optimizing your daily service calls, Waypoint X is the essential tool for anyone who needs to visit multiple destinations in a single trip. Delivery and rideshare drivers can minimize their time on the road, while traveling sales reps can maximize their face time with clients and prospects.',
@@ -61,13 +76,27 @@ export function AppCompanyPortfolio_2024() {
       ],
       url: 'https://waypoint-x.com/',
       web: '',
-      appstore: 'https://apps.apple.com/app/apple-store/id6741455428?pt=127609708&ct=perpetualmedia&mt=8',
+      appstore: 'https://apps.apple.com/app/apple-store/id6741455428?pt=127609708&ct=perpetualmedia',
       playstore: ''
     },
     { name: 'Dividables', image: '/assets/images/iphone-dividables.png', description: 'Split bills fairly with Dividables. Perfect for roommates, friends, and groups. Calculate shared expenses instantly.', features: ['No sign-up required - start splitting bills immediately', 'Easy to use on any device - mobile, tablet, or desktop', 'Instantly shareable - quickly send results to your group'], url: '', web: 'https://www.dividables.com/', appstore: '', playstore: '' },
   ]
 
   const portfolioItems: any[] = [
+    {
+      name: 'Transcopia',
+      image: '/assets/images/macbook-transcopia.png',
+      description: 'Transcopia is a business transformation consultancy led by founder Bushrah Naz-Tyrer, delivering tailored, data-driven solutions across corporate, medical, and executive coaching verticals to drive operational excellence and sustainable growth.',
+      features: [
+        '15+ years experience with measurable efficiency gains and global impact.',
+        'Expertise spanning corporate optimization, medical operations, and executive coaching.',
+        'Collaborative, transparent approach with customized solutions and ongoing support.',
+      ],
+      url: 'https://transcopia.co/',
+      web: '',
+      appstore: '',
+      playstore: ''
+    },
     {
       name: 'PicnStic',
       image: '/assets/images/macbook-picnstic.png',
@@ -92,6 +121,20 @@ export function AppCompanyPortfolio_2024() {
         'Client-focused project management ensuring on-time, high-quality deliverables'
       ],
       url: 'https://www.printbuy.ca/',
+      web: '',
+      appstore: '',
+      playstore: ''
+    },
+    {
+      name: 'Inter Commerce Consulting',
+      image: '/assets/images/macbook-icc.png',
+      description: 'Empower businesses to navigate and thrive in the dynamic landscape of international trade. Our mission is to break down barriers and streamline cross-border commerce, fostering global economic cooperation and prosperity.',
+      features: [
+        'Complete trade solutions - Risk mitigation, cost reduction, supply chain optimization, market entry, and sustainability guidance for global success.',
+        'All business sizes - Tailored solutions for startups making first international sales to multinational corporations.',
+        'Streamlines global commerce - Cutting-edge approach breaks down barriers and creates marketplace opportunities.'
+      ],
+      url: 'https://intercommerceconsulting.com/',
       web: '',
       appstore: '',
       playstore: ''
